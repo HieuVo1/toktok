@@ -1,0 +1,13 @@
+<div class="container">
+  <div class=" flex jc-flex-end al-center">
+    <a [routerLink]="['/auth/login']"> Log Out </a>
+  </div>
+  <div class="movie-section">
+    <div infinite-scroll (scrolled)="onScrollDown()" nz-row class="movie-list">
+      <div *ngFor="let movie of movies" nz-col class="movie-item column" [nzLg]="6" [nzMd]="8 " [nzSm]="12 "
+        [nzXs]="24">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
+    </div>
+  </div>
+</div>

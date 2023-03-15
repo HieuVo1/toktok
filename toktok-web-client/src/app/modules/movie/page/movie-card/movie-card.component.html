@@ -1,0 +1,13 @@
+<div class="movie-card">
+  <nz-card nzHoverable [nzCover]="coverTemplate">
+    <nz-card-meta [nzTitle]="movie.title"></nz-card-meta>
+    <div class="movie-card-like flex jc-space-between al-center">
+      <span>{{likeCounts}}</span>
+      <button nz-button [nzType]="currentUserLiked ? 'primary' :'default'" nzShape="circle"
+        (click)="Like(movie.movieId)"><span nz-icon nzType="like"></span></button>
+    </div>
+  </nz-card>
+  <ng-template #coverTemplate>
+    <img alt="example" [src]="movie.imageUrl" />
+  </ng-template>
+</div>
